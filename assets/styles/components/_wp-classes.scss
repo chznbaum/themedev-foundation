@@ -6,41 +6,37 @@
   margin-left: 0;
   margin-right: 0;
   max-width: 100%;
-  height: auto;
 }
 .aligncenter {
   display: block;
-  margin: ($spacer / 2) auto;
-  height: auto;
+  margin: ($column-gutter / 2) auto;
 }
 .alignleft,
 .alignright {
-  margin-bottom: ($spacer / 2);
-  height: auto;
+  margin-bottom: ($column-gutter / 2);
 }
-@include media-breakpoint-up(sm) {
+@media #{$small-up} {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
-    margin-right: ($spacer / 2);
+    margin-right: ($column-gutter / 2);
   }
   .alignright {
     float: right;
-    margin-left: ($spacer / 2);
+    margin-left: ($column-gutter / 2);
   }
 }
 
 // Captions
 .wp-caption {
-  @extend .figure-img;
-  @extend .img-fluid;
+  //@extend .thumbnail;
 }
 .wp-caption-text {
-  @extend .figure-caption;
+  padding: ($column-gutter / 2);
 }
 
 // Text meant only for screen readers
 .screen-reader-text {
-  @extend .sr-only;
-  @extend .sr-only-focusable;
+  //@extend .sr-only;
+  //@extend .sr-only-focusable;
 }
